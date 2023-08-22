@@ -3,15 +3,19 @@ import { OrbitControls, Environment, Lightformer, Float } from '@react-three/dre
 import Key from './Key'
 import { easing } from 'maath'
 import { Windows } from './Windows'
+import Animations from './Animation'
+import { Suspense } from 'react'
 
 export default function App() {
 	return (
 		<Canvas shadows orthographic camera={{ position: [15, -15, 30], zoom: 100 }}>
 			<color attach='background' args={['#FBFBFD']} />
-			<Float floatIntensity={0.1} speed={0.5} floatingRange={[1, 10]} rotationIntensity={0}>
+			{/* <Float floatIntensity={0.1} speed={0.5} floatingRange={[1, 10]} rotationIntensity={0}>
 				<Key rotation-x={Math.PI / 2} rotation-y={Math.PI / 2} scale={2} />
 				<Windows rotation-y={Math.PI} />
-			</Float>
+			</Float> */}
+			<Animations />
+
 			{/* Environment & Lights */}
 			<Environment resolution={32}>
 				<group rotation={[-Math.PI / 4, -0.3, 0]}>
