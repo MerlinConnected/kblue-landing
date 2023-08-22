@@ -7,7 +7,7 @@ import * as THREE from 'three'
 export default function Animation() {
 	return (
 		<Suspense fallback={null}>
-			<ScrollControls pages={5}>
+			<ScrollControls pages={1}>
 				<Animate />
 			</ScrollControls>
 		</Suspense>
