@@ -9,7 +9,7 @@ export default function App() {
 		<Canvas shadows orthographic camera={{ position: [15, -15, 30], zoom: 100 }}>
 			<color attach='background' args={['#FBFBFD']} />
 			<Float floatIntensity={0.1} speed={0.5} floatingRange={[1, 10]} rotationIntensity={0}>
-				<Key rotation-x={Math.PI / 2} rotation-y={Math.PI} />
+				<Key rotation-x={Math.PI / 2} rotation-y={Math.PI / 2} scale={2} />
 				<Windows rotation-y={Math.PI} />
 			</Float>
 			{/* Environment & Lights */}
