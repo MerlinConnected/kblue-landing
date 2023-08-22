@@ -1,20 +1,15 @@
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Environment, Lightformer, Float } from '@react-three/drei'
-import Key from './Key'
+import { Environment, Lightformer, Float } from '@react-three/drei'
 import { easing } from 'maath'
-import { Windows } from './Windows'
 import Animations from './Animation'
-import { Suspense } from 'react'
 
 export default function App() {
 	return (
 		<Canvas shadows orthographic camera={{ position: [15, -15, 30], zoom: 100 }}>
 			<color attach='background' args={['#FBFBFD']} />
-			{/* <Float floatIntensity={0.1} speed={0.5} floatingRange={[1, 10]} rotationIntensity={0}>
-				<Key rotation-x={Math.PI / 2} rotation-y={Math.PI / 2} scale={2} />
-				<Windows rotation-y={Math.PI} />
-			</Float> */}
-			<Animations />
+			<Float>
+				<Animations />
+			</Float>
 
 			{/* Environment & Lights */}
 			<Environment resolution={32}>
@@ -36,12 +31,7 @@ export default function App() {
 
 function Rig() {
 	useFrame((state, delta) => {
-		easing.damp3(
-			state.camera.position,
-			[-state.pointer.x * 5, -state.pointer.y * 3.5, 15 + Math.cos(state.pointer.x) * 10],
-			0.3,
-			delta
-		)
+		easing.damp3(state.camera.position, [-state.pointer.x * 5, -state.pointer.y * 3.5, 15], 0.3, delta)
 		state.camera.lookAt(0, 0, 0)
 	})
 }
