@@ -1,4 +1,4 @@
-import { useAnimations, useGLTF, useScroll, ScrollControls } from '@react-three/drei'
+import { useAnimations, useGLTF, useScroll, ScrollControls, MeshTransmissionMaterial } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { useRef } from 'react'
 import { Suspense, useEffect } from 'react'
@@ -44,54 +44,72 @@ function Animate({ ...props }) {
 					castShadow
 					receiveShadow
 					geometry={nodes.Window01.geometry}
-					material={nodes.Window01.material}
 					position={[-8.018, 3.022, -1.224]}
 					rotation={[0, 0, 0.32]}
-				/>
+				>
+					<meshToonMaterial color={'#3054e5'} />
+				</mesh>
 				<mesh
 					name='Window02'
 					castShadow
 					receiveShadow
 					geometry={nodes.Window02.geometry}
-					material={nodes.Window02.material}
 					position={[-6.715, 2.953, -1.503]}
 					rotation={[0, 0, 0.124]}
-				/>
+				>
+					<meshToonMaterial color={'#2854ff'} />
+				</mesh>
 				<mesh
 					name='Window03'
 					castShadow
 					receiveShadow
 					geometry={nodes.Window03.geometry}
-					material={nodes.Window03.material}
 					position={[-8.075, -3.184, 0.774]}
 					rotation={[0, 0, -0.408]}
-				/>
+				>
+					<meshToonMaterial color={'#3F65FC'} />
+				</mesh>
 				<mesh
 					name='Window04'
 					castShadow
 					receiveShadow
 					geometry={nodes.Window04.geometry}
-					material={nodes.Window04.material}
 					position={[7.324, 3.338, -1.031]}
 					rotation={[0, 0, -0.38]}
-				/>
+				>
+					<meshToonMaterial color={'#2854ff'} />
+				</mesh>
 				<mesh
 					name='Window05'
 					castShadow
 					receiveShadow
 					geometry={nodes.Window05.geometry}
-					material={nodes.Window05.material}
 					position={[8.232, 0.494, -1.696]}
 					rotation={[0, 0, -0.459]}
-				/>
+				>
+					<meshToonMaterial color={'#3F65FC'} />
+				</mesh>
 				<group name='Empty' position={[0, 4.55, 0]} rotation={[-0.271, 0.127, 1.406]}>
-					<mesh
-						name='Rounded_Key'
-						castShadow
-						receiveShadow
-						geometry={nodes.Rounded_Key.geometry}
-						material={nodes.Rounded_Key.material}
-					/>
+					<mesh name='Rounded_Key' castShadow receiveShadow geometry={nodes.Rounded_Key.geometry}>
+						<MeshTransmissionMaterial
+							backside
+							backsideThickness={0.44}
+							samples={128}
+							resolution={1024}
+							transmission={1}
+							clearcoat={0.1}
+							clearcoatRoughness={0}
+							thickness={1.85}
+							chromaticAberration={0}
+							anisotropy={0.3}
+							roughness={0.3}
+							distortion={0}
+							distortionScale={0}
+							temporalDistortion={0}
+							ior={1.5}
+							color={'#ffffff'}
+						/>
+					</mesh>
 				</group>
 			</group>
 		</group>
