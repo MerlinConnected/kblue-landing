@@ -2,17 +2,16 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { OrbitControls, Environment, Lightformer, Float } from '@react-three/drei'
 import Key from './Key'
 import { easing } from 'maath'
-import Spheres from './Spheres'
+import { Windows } from './Windows'
 
 export default function App() {
 	return (
-		<Canvas shadows orthographic camera={{ position: [15, -5, 30], zoom: 100 }}>
-			<Float floatIntensity={0.1} speed={0.2} floatingRange={[1, 10]}>
+		<Canvas shadows orthographic camera={{ position: [15, -15, 30], zoom: 100 }}>
+			<color attach='background' args={['#FBFBFD']} />
+			<Float floatIntensity={0.1} speed={0.5} floatingRange={[1, 10]} rotationIntensity={0}>
 				<Key rotation-x={Math.PI / 2} rotation-y={Math.PI} />
-				<Spheres />
+				<Windows rotation-y={Math.PI} />
 			</Float>
-			{/* <OrbitControls /> */}
-
 			{/* Environment & Lights */}
 			<Environment resolution={32}>
 				<group rotation={[-Math.PI / 4, -0.3, 0]}>
@@ -35,8 +34,8 @@ function Rig() {
 	useFrame((state, delta) => {
 		easing.damp3(
 			state.camera.position,
-			[Math.sin(-state.pointer.x) * 5, state.pointer.y * 3.5, 15 + Math.cos(state.pointer.x) * 10],
-			0.2,
+			[-state.pointer.x * 5, -state.pointer.y * 3.5, 15 + Math.cos(state.pointer.x) * 10],
+			0.3,
 			delta
 		)
 		state.camera.lookAt(0, 0, 0)

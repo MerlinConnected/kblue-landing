@@ -35,28 +35,25 @@ export default function Key(props) {
 	return (
 		<group {...props} dispose={null}>
 			<mesh castShadow receiveShadow geometry={nodes.Cylinder.geometry}>
-				{/* <MeshTransmissionMaterial
-					backside={true}
-					backsideThickness={0.3}
-					samples={16}
+				<MeshTransmissionMaterial
+					backside
+					backsideThickness={0.44}
+					samples={32}
 					resolution={1024}
 					transmission={1}
 					clearcoat={0.1}
-					clearcoatRoughness={0.25}
-					thickness={0.3}
-					chromaticAberration={5}
+					clearcoatRoughness={0}
+					thickness={1.85}
+					chromaticAberration={0}
 					anisotropy={0.3}
-					roughness={0}
-					distortion={0.5}
-					distortionScale={0.1}
-					temporalDistortion={0.1}
+					roughness={0.6}
+					distortion={0}
+					distortionScale={0}
+					temporalDistortion={0}
 					ior={1.5}
-					color={'#ff9cf5'}
-					gcolor={'#ff7eb3'}
-					shadow={'#750d57'}
-					background={texture}
-				/> */}
-				<MeshTransmissionMaterial {...config} background={texture} />
+					color={'#ffffff'}
+				/>
+				{/* <MeshTransmissionMaterial {...config} /> */}
 			</mesh>
 		</group>
 	)
