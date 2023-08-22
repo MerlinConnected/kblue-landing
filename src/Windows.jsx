@@ -29,7 +29,7 @@ export function Windows(props) {
 		<group {...props} dispose={null}>
 			<Float rotationIntensity={0} floatIntensity={0.2} speed={0.2} floatingRange={[1, 3]}>
 				<mesh castShadow receiveShadow geometry={nodes.Window01.geometry}>
-					<MeshTransmissionMaterial
+					{/* <MeshTransmissionMaterial
 						backside
 						backsideThickness={0.44}
 						samples={4}
@@ -46,18 +46,19 @@ export function Windows(props) {
 						color={'#3F65FC'}
 						gColor={'#ffffff'}
 						shadow={'#ffffff'}
-					/>
+					/> */}
 					{/* <MeshTransmissionMaterial {...config} /> */}
+					<meshToonMaterial color={'#3054e5'} />
 				</mesh>
 			</Float>
 			<Float rotationIntensity={0} floatIntensity={0.1} speed={0.75} floatingRange={[1, 1.5]}>
 				<mesh castShadow receiveShadow geometry={nodes.Window02.geometry}>
-					<meshToonMaterial color={'#3F65FC'} />
+					<meshToonMaterial color={'#2854ff'} />
 				</mesh>
 			</Float>
 			<Float rotationIntensity={0} floatIntensity={0.5} speed={1} floatingRange={[1, 2]}>
 				<mesh castShadow receiveShadow geometry={nodes.Window03.geometry}>
-					<MeshTransmissionMaterial
+					{/* <MeshTransmissionMaterial
 						backside
 						backsideThickness={0.44}
 						samples={4}
@@ -74,12 +75,13 @@ export function Windows(props) {
 						color={'#3F65FC'}
 						gColor={'#ffffff'}
 						shadow={'#ffffff'}
-					/>
+					/> */}
+					<meshToonMaterial color={'#3054e5'} />
 				</mesh>
 			</Float>
 			<Float rotationIntensity={0} floatIntensity={0.14} speed={0.5} floatingRange={[1, 2.4]}>
 				<mesh castShadow receiveShadow geometry={nodes.Window04.geometry}>
-					<MeshTransmissionMaterial
+					{/* <MeshTransmissionMaterial
 						backside
 						backsideThickness={0.44}
 						samples={4}
@@ -96,7 +98,8 @@ export function Windows(props) {
 						color={'#3F65FC'}
 						gColor={'#ffffff'}
 						shadow={'#ffffff'}
-					/>
+					/> */}
+					<meshToonMaterial color={'#2854ff'} />
 				</mesh>
 			</Float>
 			<Float rotationIntensity={0} floatIntensity={0.15} speed={0.5} floatingRange={[1, 2.5]}>

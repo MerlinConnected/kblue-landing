@@ -38,7 +38,7 @@ export default function Key(props) {
 				<MeshTransmissionMaterial
 					backside
 					backsideThickness={0.44}
-					samples={32}
+					samples={128}
 					resolution={1024}
 					transmission={1}
 					clearcoat={0.1}
@@ -46,7 +46,7 @@ export default function Key(props) {
 					thickness={1.85}
 					chromaticAberration={0}
 					anisotropy={0.3}
-					roughness={0.6}
+					roughness={0.3}
 					distortion={0}
 					distortionScale={0}
 					temporalDistortion={0}
