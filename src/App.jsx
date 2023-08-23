@@ -31,7 +31,7 @@ export default function App() {
 
 function Rig() {
 	useFrame((state, delta) => {
-		easing.damp3(state.camera.position, [-state.pointer.x * 5, -state.pointer.y * 3.5, 15], 0.3, delta)
+		easing.damp3(state.camera.position, [-state.pointer.x * 5 - 25, -state.pointer.y * 3.5 - 5, 50], 0.3, delta)
 		state.camera.lookAt(0, 0, 0)
 	})
 }
