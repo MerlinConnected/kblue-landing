@@ -6,7 +6,7 @@ export default function Scale(props) {
 	const ref = useRef()
 	const [hovered, setHover] = useState(false)
 
-	useFrame((_, delta) => {
+	useFrame(() => {
 		ref.current.scale.y =
 			ref.current.scale.z =
 			ref.current.scale.x =
