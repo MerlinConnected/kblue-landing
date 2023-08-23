@@ -4,13 +4,15 @@ import { easing } from 'maath'
 import { Perf } from 'r3f-perf'
 
 import Animations from './Animation'
+import Markup from './Markup'
 
 export default function App() {
 	return (
 		<Canvas shadows orthographic camera={{ position: [15, -15, 30], zoom: 100 }}>
 			<color attach='background' args={['#FBFBFD']} />
-			<Float>
+			<Float rotationIntensity={0.5} floatIntensity={0.2}>
 				<Animations />
+				{/* <Markup /> */}
 			</Float>
 
 			{/* Environment & Lights */}
