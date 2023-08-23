@@ -1,6 +1,8 @@
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Environment, Lightformer, Float } from '@react-three/drei'
 import { easing } from 'maath'
+import { Perf } from 'r3f-perf'
+
 import Animations from './Animation'
 
 export default function App() {
@@ -25,6 +27,8 @@ export default function App() {
 			<ambientLight intensity={0.75} />
 
 			<Rig />
+
+			<Perf />
 		</Canvas>
 	)
 }
