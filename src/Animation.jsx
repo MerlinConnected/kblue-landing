@@ -18,22 +18,20 @@ function Animate({ ...props }) {
 	const group = useRef()
 
 	const scroll = useScroll()
-	const { nodes, animations } = useGLTF('/windows-animated.glb') // Load the glTF model and retrieve the scene, nodes, and animations
-	const { actions } = useAnimations(animations, group) // Get access to animation actions
+	const { nodes, animations } = useGLTF('/windows-animated.glb')
+	const { actions } = useAnimations(animations, group)
 
 	useEffect(() => {
-		// Set the initial playback state of the 'windowAnimation' animation to paused
 		void (actions['windowAnimation'].play().paused = true)
 	}, [actions])
 
 	useFrame((state, delta) => {
-		const action = actions['windowAnimation'] // Get the 'windowAnimation' animation action
-		const offset = 1 - scroll.offset // Calculate the offset based on scroll position
+		const action = actions['windowAnimation']
+		const offset = 1 - scroll.offset
 
-		// Interpolate the animation time based on the offset
 		action.time = THREE.MathUtils.damp(action.time, action.getClip().duration * offset, 100, delta)
 
-		state.camera.lookAt(0, 0, 0) // Set the camera to look at the origin (0, 0, 0)
+		state.camera.lookAt(0, 0, 0)
 	})
 
 	return (
@@ -47,7 +45,19 @@ function Animate({ ...props }) {
 					position={[-8.018, 3.022, -1.224]}
 					rotation={[0, 0, 0.32]}
 				>
-					<meshToonMaterial color={'#3054e5'} />
+					<MeshTransmissionMaterial
+						backside
+						backsideThickness={0.44}
+						samples={128}
+						resolution={128}
+						transmission={1}
+						clearcoat={0.1}
+						clearcoatRoughness={0}
+						thickness={0.45}
+						roughness={0.45}
+						ior={0.4}
+						color={'#3F65FC'}
+					/>
 				</mesh>
 				<mesh
 					name='Window02'
@@ -67,7 +77,19 @@ function Animate({ ...props }) {
 					position={[-8.075, -3.184, 0.774]}
 					rotation={[0, 0, -0.408]}
 				>
-					<meshToonMaterial color={'#3F65FC'} />
+					<MeshTransmissionMaterial
+						backside
+						backsideThickness={0.44}
+						samples={128}
+						resolution={128}
+						transmission={1}
+						clearcoat={0.1}
+						clearcoatRoughness={0}
+						thickness={0.45}
+						roughness={0.45}
+						ior={0.4}
+						color={'#3F65FC'}
+					/>
 				</mesh>
 				<mesh
 					name='Window04'
@@ -77,7 +99,19 @@ function Animate({ ...props }) {
 					position={[7.324, 3.338, -1.031]}
 					rotation={[0, 0, -0.38]}
 				>
-					<meshToonMaterial color={'#2854ff'} />
+					<MeshTransmissionMaterial
+						backside
+						backsideThickness={0.44}
+						samples={128}
+						resolution={128}
+						transmission={1}
+						clearcoat={0.1}
+						clearcoatRoughness={0}
+						thickness={0.45}
+						roughness={0.45}
+						ior={0.4}
+						color={'#3F65FC'}
+					/>
 				</mesh>
 				<mesh
 					name='Window05'
