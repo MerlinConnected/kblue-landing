@@ -48,8 +48,8 @@ function Animate({ ...props }) {
 					<MeshTransmissionMaterial
 						backside
 						backsideThickness={0.44}
-						samples={128}
-						resolution={128}
+						samples={64}
+						resolution={64}
 						transmission={1}
 						clearcoat={0.1}
 						clearcoatRoughness={0}
@@ -80,8 +80,8 @@ function Animate({ ...props }) {
 					<MeshTransmissionMaterial
 						backside
 						backsideThickness={0.44}
-						samples={128}
-						resolution={128}
+						samples={64}
+						resolution={64}
 						transmission={1}
 						clearcoat={0.1}
 						clearcoatRoughness={0}
@@ -102,8 +102,8 @@ function Animate({ ...props }) {
 					<MeshTransmissionMaterial
 						backside
 						backsideThickness={0.44}
-						samples={128}
-						resolution={128}
+						samples={64}
+						resolution={64}
 						transmission={1}
 						clearcoat={0.1}
 						clearcoatRoughness={0}
