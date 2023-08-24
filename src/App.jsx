@@ -7,6 +7,7 @@ import Key from './Key'
 import Markup from './Markup'
 import Planet from './Planet'
 import Plane from './Plane'
+import MarkupTest from './MarkupTest'
 
 export default function App() {
 	return (
@@ -14,7 +15,8 @@ export default function App() {
 			<color attach='background' args={['#FBFBFD']} />
 			<Float rotationIntensity={0.5} floatIntensity={0.2}>
 				{/* <Key /> */}
-				<Markup />
+				{/* <Markup /> */}
+				<MarkupTest />
 				{/* <Planet /> */}
 				{/* <Plane /> */}
 			</Float>
