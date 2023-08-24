@@ -3,18 +3,20 @@ import { Environment, Lightformer, Float } from '@react-three/drei'
 import { easing } from 'maath'
 import { Perf } from 'r3f-perf'
 
-import Animations from './Animation'
+import Key from './Key'
 import Markup from './Markup'
 import Planet from './Planet'
+import Plane from './Plane'
 
 export default function App() {
 	return (
 		<Canvas shadows orthographic dpr={[1, 2]} camera={{ position: [15, -15, 30], zoom: 100 }}>
 			<color attach='background' args={['#FBFBFD']} />
 			<Float rotationIntensity={0.5} floatIntensity={0.2}>
-				{/* <Animations /> */}
-				{/* <Markup /> */}
-				<Planet />
+				{/* <Key /> */}
+				<Markup />
+				{/* <Planet /> */}
+				{/* <Plane /> */}
 			</Float>
 
 			{/* Environment & Lights */}

@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { Suspense, useEffect } from 'react'
 import * as THREE from 'three'
 
-export default function Animation() {
+export default function Key() {
 	return (
 		<Suspense fallback={null}>
 			<ScrollControls pages={1}>
