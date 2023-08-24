@@ -3,6 +3,8 @@ import { Environment, Lightformer, Float } from '@react-three/drei'
 import { easing } from 'maath'
 import { Perf } from 'r3f-perf'
 
+import * as THREE from 'three'
+
 import Key from './Key'
 import Markup from './Markup'
 import Planet from './Planet'
@@ -11,7 +13,15 @@ import MarkupTest from './MarkupTest'
 
 export default function App() {
 	return (
-		<Canvas shadows orthographic dpr={[1, 2]} camera={{ position: [15, -15, 30], zoom: 100 }}>
+		<Canvas
+			shadows
+			orthographic
+			dpr={[1, 2]}
+			camera={{ position: [15, -15, 30], zoom: 100 }}
+			onCreated={({ gl }) => {
+				gl.toneMapping = THREE.NoToneMapping
+			}}
+		>
 			<color attach='background' args={['#FBFBFD']} />
 			<Float rotationIntensity={0.5} floatIntensity={0.2}>
 				{/* <Key /> */}

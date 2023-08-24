@@ -5,7 +5,7 @@ import * as THREE from 'three'
 export default function MarkupTest(props) {
 	const { nodes, materials } = useGLTF('/markup-test.glb')
 
-	const albedoChart = useTexture('/tex/chart.jpg', (texture) => {
+	const albedoChart = useTexture('/tex/chart.png', (texture) => {
 		texture.flipY = false
 		texture.encoding = THREE.sRGBEncoding
 	})
@@ -59,11 +59,11 @@ export default function MarkupTest(props) {
 					/>
 				</mesh>
 				<group name='MarkupWindow02' position={[2.627, 0.655, -1.811]}>
-					<mesh name='window04002' castShadow receiveShadow geometry={nodes.window04002.geometry}>
+					{/* <mesh name='window04002' castShadow receiveShadow geometry={nodes.window04002.geometry}>
 						<meshPhysicalMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
-					</mesh>
+					</mesh> */}
 					<mesh name='window04002_1' castShadow receiveShadow geometry={nodes.window04002_1.geometry}>
-						<meshPhysicalMaterial map={albedoChart} />
+						<meshBasicMaterial map={albedoChart} />
 					</mesh>
 				</group>
 				<mesh
@@ -88,11 +88,11 @@ export default function MarkupTest(props) {
 					/>
 				</mesh>
 				<group name='MarkupWindow04' position={[-2.334, -1.638, 0.602]}>
-					<mesh name='window04003' castShadow receiveShadow geometry={nodes.window04003.geometry}>
+					{/* <mesh name='window04003' castShadow receiveShadow geometry={nodes.window04003.geometry}>
 						<meshPhysicalMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
-					</mesh>
+					</mesh> */}
 					<mesh name='window04003_1' castShadow receiveShadow geometry={nodes.window04003_1.geometry}>
-						<meshPhysicalMaterial map={albedoGraph} />
+						<meshBasicMaterial map={albedoGraph} />
 					</mesh>
 				</group>
 			</group>
